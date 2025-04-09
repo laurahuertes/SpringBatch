@@ -1,0 +1,35 @@
+1- En el CSV añadir nombre y apellidos
+ 
+- He abierto el sample.csv y he añadido los campos name y surname en cada registro.
+- Después he añadido ambos campos en string a la clase User
+ 
+2- hacer que userEntity tenga nombre y apellido juntos (campo fullName)
+- He añadido a UserEntity el campo stirng fullName
+ 
+3- Una nueva columna en BDD que sea el timestamp
+- He añadido a UserEntity el campo Timestamp createdAt
+- He añadido al data.sql la columna fullName y createdAt
+ 
+4- insert previos de datos
+- He añadido en BatchConfiguration, en los métodos reader y readerBBDD los nuevos campos añadidos
+- En la clase BatchConfiguration he modificado el método reader creando un rowMapper nuevo para que me imprima correctamente el name y el surname de User como fullName de UserEntity
+
+5- Step nuevo que sea sacar los valores de BDD e imprimirlos
+- He añadido un nuevo Tasklet que me imprima los usuarios de la base de datos y tambien he añadido el step4 para ello
+
+6- Nuevo step (reader, processor y writer) saque de BDD, convierta a un nuevo tipo que sea Persona (no tiene password)
+la guardamos en un csv
+
+Para ello, he añadido la clase PersonaProcessor, PersonaWriter y ShowPersonaTasklet, no he realizado un reader ya que para la lectura de la base de datos ya estaba implementado
+En PersonaProcessor he transformado de la clase User a la clase Persona, y en la clase PersonaWriter he implementado la escritura de las personas recogidas en un csv. 
+Finalmente la clase ShowPersonaTasklet mostramos las distintas personas que hemos añadido en el context.
+ 
+6.5- Nuevo listener
+ 
+7- Que pasa si da un error al insertar 1 elemento? sigue con el resto o para?
+ Yo diría que sigue con el resto de elementos.
+ 
+8- Que pasa si variamos los chunks y como se imprime por pantalla
+Si variamos los chunks cambiará el número de registros que se procesan en cada llamada.
+ 
+9- En un cron que pasa si ejecutamos jobs mas rapido que lo que tardan en finalizar
