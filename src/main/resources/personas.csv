@@ -1,0 +1,8 @@
+id,nombre,apellido,dni
+1,adminname,adminsurname,12345678A
+2,username,usersurname,12345678A
+3,managername,managersurname,12345678A
+4,employeename,employeesurname,12345678A
+5,clientname,clientsurname,12345678A
+6,partnername,partnersurname,12345678A
+7,visitorname,visitorsurname,12345678A
